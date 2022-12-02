@@ -6,7 +6,7 @@ If more than one element contains the same text, the code returns the xpath with
 
 # Example
 
-´´´python
+´´´
 from sample import Sample
 from trainer import Trainer
 
@@ -32,7 +32,7 @@ def find_xpaths():
     return xpaths
 ´´´
 
-´´´python
+´´´
 def scrape_page(url, xpaths):
     import requests
     from bs4 import BeautifulSoup
