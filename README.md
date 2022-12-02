@@ -54,6 +54,7 @@ def scrape_page(url, xpaths):
     return results
 ```
 
+Find xpath and scrape web page>
 ```python
 xpaths = find_xpaths()
 
