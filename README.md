@@ -6,6 +6,7 @@ If more than one element contains the same text, the code returns the xpath with
 
 # Example
 
+Find xpath based on user examples:
 ```python
 from sample import Sample
 from trainer import Trainer
@@ -32,6 +33,7 @@ def find_xpaths():
     return xpaths
 ```
 
+Scrape the webpage using found examples:
 ```python
 def scrape_page(url, xpaths):
     import requests
@@ -50,5 +52,25 @@ def scrape_page(url, xpaths):
         results[target] = ' '.join(dom.xpath(xpath))
 
     return results
+```
+
+```python
+xpaths = find_xpaths()
+
+results = scrape_page('https://quotes.toscrape.com/', xpaths)
+if results is not None:
+    for target, value in results.items():
+        print(f'{target}: {value}')
+```
+
+Results:
+```
+first_quote: “The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”
+first_quote_author: by  Albert Einstein 
+ (about) 
+
+second_quote: “It is our choices, Harry, that show what we truly are, far more than our abilities.”
+second_quote_author: by  J.K. Rowling 
+ (about)
 ```
 
